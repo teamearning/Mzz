@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FROXY SERVER</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 4em;
+      transition: color 0.5s ease, text-shadow 0.5s ease;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="froxy">FROXY SERVER</h1>
+
+  <script>
+    const colors = [
+      "#00ff9f", "#ff00aa", "#00aaff", "#aaff00",
+      "#ff9900", "#ff0044", "#00ffff", "#cc00ff"
+    ];
+
+    function changeColor() {
+      const froxy = document.getElementById("froxy");
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      froxy.style.color = randomColor;
+      froxy.style.textShadow = `0 0 10px ${randomColor}`;
+    }
+
+    // Initial call
+    changeColor();
+
+    // Change color every second
+    setInterval(changeColor, 1000); // 1000 ms = 1 second
+  </script>
+</body>
+</html>
